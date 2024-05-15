@@ -1,5 +1,5 @@
 import gradio as gr
-import spaces
+
 css = '''
 .gradio-container {width: 85% !important}
 '''
@@ -15,8 +15,6 @@ from insightface.app import FaceAnalysis
 app = FaceAnalysis(name="buffalo_l", providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(320, 320))
 from insightface.app import FaceAnalysis
-
-
 
 def swap_to_gallery(images):
     return gr.update(value=images, visible=True), gr.update(visible=True), gr.update(visible=False)
@@ -40,7 +38,6 @@ print(f"### Cleaning cached examples ...")
 os.system(f"rm -rf gradio_cached_examples/")
 
 
-@spaces.GPU
 def generate_image(image_container,upload_images, prompt, negative_prompt, num_steps, guidance_scale, seed, image_scale,video_length,progress=gr.Progress(track_tqdm=True)):
     # check the trigger word
     # apply the style template
