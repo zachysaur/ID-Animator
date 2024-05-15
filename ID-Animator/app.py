@@ -208,6 +208,6 @@ with gr.Blocks(css=css) as demo:
             inputs=[image_container,files, prompt, negative_prompt, num_steps, guidance_scale, seed,image_scale,video_length],
             outputs=[result_video]
         )
-    gr.Examples( fn=generate_image, examples=examples, inputs=[image_container,files, prompt, negative_prompt, num_steps, guidance_scale, seed,image_scale,video_length], outputs=[result_video], cache_examples=True )
+    gr.Examples( fn=generate_image, examples=examples, inputs=[image_container,files, prompt, negative_prompt, num_steps, guidance_scale, seed,image_scale,video_length], outputs=[result_video], cache_examples=False )
 
 demo.launch(share=True)
