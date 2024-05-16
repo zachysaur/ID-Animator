@@ -213,4 +213,4 @@ with gr.Blocks(css=css) as demo:
         )
     gr.Examples( fn=generate_image, examples=examples, inputs=[image_container,files, prompt, negative_prompt, num_steps, guidance_scale, seed,image_scale,video_length], outputs=[result_video], cache_examples=True )
 
-demo.launch(share=True)
+demo.launch(share=False)
